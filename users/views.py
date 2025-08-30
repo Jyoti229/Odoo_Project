@@ -1,3 +1,6 @@
+# Welcome page view
+def welcome_view(request):
+	return render(request, 'users/welcome.html')
 from django.shortcuts import render, redirect
 from .forms import SignupForm, OTPVerificationForm
 from .models import CustomUser, OTP
@@ -31,8 +34,8 @@ def signup_view(request):
 				fail_silently=False,
 			)
 
-			messages.success(request, 'Account created! Please check your email for OTP.')
-			return redirect('login')
+			# Show success message and button to proceed to OTP verification
+			return render(request, 'users/signup_success.html', {'email': user.email})
 	else:
 		form = SignupForm()
 	return render(request, 'users/signup.html', {'form': form})

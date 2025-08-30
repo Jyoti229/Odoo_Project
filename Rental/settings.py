@@ -124,5 +124,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Email backend for development: print emails to console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Custom user model
 AUTH_USER_MODEL = 'users.CustomUser'

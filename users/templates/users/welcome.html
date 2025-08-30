@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+  <div class="col-md-7 text-center">
+    <div class="card shadow-sm p-4">
+      <h1 class="mb-3">Welcome to the Rental Management System</h1>
+      <p class="lead mb-4">Easily rent products, manage your bookings, and enjoy a seamless rental experience.</p>
+      <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-2">Login</a>
+      <a href="{% url 'signup' %}" class="btn btn-success btn-lg">Sign Up</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

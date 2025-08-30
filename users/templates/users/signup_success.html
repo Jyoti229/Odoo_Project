@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="alert alert-success mt-4">
+      <h4 class="alert-heading">Sign Up Successful!</h4>
+      <p>Your account has been created. Please check your email ({{ email }}) for the OTP to verify your account.</p>
+      <hr>
+      <a href="{% url 'otp_verify' %}" class="btn btn-warning">Proceed to OTP Verification</a>
+      <a href="{% url 'login' %}" class="btn btn-primary ms-2">Go to Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

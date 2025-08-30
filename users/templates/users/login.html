@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    <label for="email">Email:</label>
-    <input type="email" name="email" required><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br>
-    <button type="submit">Login</button>
-  </form>
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title mb-4 text-center">Login</h3>
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+          <span>New user?</span> <a href="{% url 'signup' %}" class="btn btn-link">Sign up here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
